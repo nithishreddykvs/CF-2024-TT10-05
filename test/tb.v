@@ -26,7 +26,7 @@ module tb ();
 `endif
 
   // Instantiate your module:
-  tt_um_example user_project (
+  tt_um_nithishreddykvs user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
