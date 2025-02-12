@@ -1,9 +1,6 @@
 `default_nettype none
 `timescale 1ns / 1ps
 
-/* This testbench instantiates the module and makes some convenient wires
-   that can be driven / tested by the cocotb test.py.
-*/
 module tb ();
 
   // Dump the signals to a VCD file. You can view it with gtkwave or surfer.
@@ -29,7 +26,7 @@ module tb ();
 `endif
 
   // Instantiate your module:
-  tt_um_nithishreddykvs user_project (
+  tt_um_example user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
@@ -57,14 +54,13 @@ module tb ();
   initial begin
     // Initialize inputs
     rst_n = 0;  // Assert reset (active low)
-    ena = 1;    // Enable the design
     ui_in = 8'b00000000; // Set switches to 0 (10% duty cycle)
     uio_in = 8'b00000000; // Unused inputs
     #100;       // Wait for 100 ns
 
     // De-assert reset
     rst_n = 1;
-    #100;       // Wait for 100 ns
+    #1000;      // Wait for 1 us to stabilize
 
     // Test different duty cycles
     ui_in = 8'b00000001; // 20% duty cycle
