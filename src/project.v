@@ -21,6 +21,10 @@ module tt_um_nithishreddykvs (
   assign uio_out = 0;
   assign uio_oe  = 0;
   assign uo_out = PWM_OUT;
+
+  // List all unused inputs to prevent warnings
+  wire _unused = &{ena, ui_in[7:2], uio_in[7:0], rst_n};
+
 	
  wire slow_clk_enable; // slow clock enable signal for debouncing FFs
  reg[27:0] counter_debounce=0;// counter for creating slow clock enable signals 
