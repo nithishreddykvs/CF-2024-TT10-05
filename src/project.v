@@ -20,7 +20,7 @@ module tt_um_nithishreddykvs (
   //assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
   assign uio_oe  = 0;
-  assign uo_out = PWM_OUT;
+  assign uo_out[0] = PWM_OUT;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, ui_in[7:2], uio_in[7:0], rst_n};
