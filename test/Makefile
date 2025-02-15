@@ -1,3 +1,4 @@
+
 # Makefile
 # See https://docs.cocotb.org/en/stable/quickstart.html for more info
 
@@ -5,13 +6,14 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = tt_um_nithishreddykvs.v pwm.v
+PROJECT_SOURCES = project.v 
 
 ifneq ($(GATES),yes)
 
 # RTL simulation:
 SIM_BUILD				= sim_build/rtl
 VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
+COMPILE_ARGS 		+= -I$(SRC_DIR)
 
 else
 
@@ -30,11 +32,8 @@ VERILOG_SOURCES += $(PWD)/gate_level_netlist.v
 
 endif
 
-# Allow sharing configuration between design and testbench via `include`:
-COMPILE_ARGS 		+= -I$(SRC_DIR)
-
 # Include the testbench sources:
-VERILOG_SOURCES += $(PWD)/tb.v
+VERILOG_SOURCES += $(PWD)/tb.v 
 TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file
