@@ -1,9 +1,11 @@
-`default_nettype none
-`timescale 1ns / 1ps
+`default_nettype none `timescale 1ns / 1ps
 
+/* This testbench just instantiates the module and makes some convenient wires
+   that can be driven / tested by the cocotb test.py.
+*/
 module tb ();
 
-  // Dump the signals to a VCD file. You can view it with gtkwave or surfer.
+  // Dump the signals to a VCD file. You can view it with gtkwave.
   initial begin
     $dumpfile("tb.vcd");
     $dumpvars(0, tb);
@@ -20,18 +22,13 @@ module tb ();
   wire [7:0] uio_out;
   wire [7:0] uio_oe;
 
-`ifdef GL_TEST
-  wire VPWR = 1'b1;
-  wire VGND = 1'b0;
-`endif
-
-  // Instantiate your module:
+  // Replace tt_um_example with your module name:
   tt_um_nithishreddykvs user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
-      .VPWR(VPWR),
-      .VGND(VGND),
+      .VPWR(1'b1),
+      .VGND(1'b0),
 `endif
 
       .ui_in  (ui_in),    // Dedicated inputs
@@ -43,49 +40,5 @@ module tb ();
       .clk    (clk),      // clock
       .rst_n  (rst_n)     // not reset
   );
-
-  // Clock generation
-  initial begin
-    clk = 0;
-    forever #10 clk = ~clk; // 50 MHz clock (20 ns period)
-  end
-
-  // Testbench logic
-  initial begin
-    // Initialize inputs
-    rst_n = 0;  // Assert reset (active low)
-    ui_in = 8'b00000000; // Set switches to 0 (10% duty cycle)
-    uio_in = 8'b00000000; // Unused inputs
-    #100;       // Wait for 100 ns
-
-    // De-assert reset
-    rst_n = 1;
-    #1000;      // Wait for 1 us to stabilize
-
-    // Test different duty cycles
-    ui_in = 8'b00000001; // 20% duty cycle
-    #1000;      // Wait for 1 us
-
-    ui_in = 8'b00000010; // 30% duty cycle
-    #1000;      // Wait for 1 us
-
-    ui_in = 8'b00000011; // 40% duty cycle
-    #1000;      // Wait for 1 us
-
-    ui_in = 8'b00000100; // 50% duty cycle
-    #1000;      // Wait for 1 us
-
-    ui_in = 8'b00000101; // 60% duty cycle
-    #1000;      // Wait for 1 us
-
-    ui_in = 8'b00000110; // 70% duty cycle
-    #1000;      // Wait for 1 us
-
-    ui_in = 8'b00000111; // 80% duty cycle
-    #1000;      // Wait for 1 us
-
-    // End simulation
-    $finish;
-  end
 
 endmodule
