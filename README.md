@@ -1,41 +1,96 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
+# PWM Generator with Adjustable Duty Cycle
 
-- [Read the documentation for project](docs/info.md)
+This project implements a **Pulse Width Modulation (PWM) generator** with a variable duty cycle using Verilog. The duty cycle can be adjusted dynamically via user input buttons, ranging from 0% to 90% in 10% increments. The design is intended for FPGA implementation and operates on a 50 MHz input clock, generating a 10 MHz PWM signal as the output.
 
-## What is Tiny Tapeout?
+---
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+## Table of Contents
 
-To learn more and get started, visit https://tinytapeout.com.
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Hardware Requirements](#hardware-requirements)
+4. [Software Requirements](#software-requirements)
+5. [How to Use](#how-to-use)
+6. [Testing and Verification](#testing-and-verification)
+7. [Credits and References](#credits-and-references)
 
-## Set up your Verilog project
+---
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
+## Project Overview
 
-The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
+The PWM generator is designed for applications requiring adjustable duty cycle signals, such as motor control, LED dimming, or general-purpose waveform generation. The module uses debounced inputs to ensure stable operation and prevent unintended duty cycle changes caused by button bounce.
 
-## Enable GitHub actions to build the results page
+---
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+## Features
 
-## Resources
+- **Adjustable Duty Cycle**: 0% to 90% in 10% increments.
+- **Debouncing Logic**: Prevents false triggers from noisy button inputs.
+- **Reset Signal**: Allows reinitialization of the system.
+- **FPGA Compatibility**: Synthesizable and testable on FPGA boards.
+- **Clock Input**: Operates with a 50 MHz clock input.
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
+---
 
-## What next?
+## Hardware Requirements
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
+To test or implement this project, you need the following hardware:
+
+1. FPGA Development Board (e.g., Xilinx Artix-7 or Intel Cyclone)
+2. Two Push Buttons (for increasing and decreasing duty cycle)
+3. Oscilloscope or Logic Analyzer (for waveform observation)
+4. 50 MHz Clock Signal Source (onboard or external)
+5. Output Device (e.g., LED, motor, or any PWM-compatible device)
+
+---
+
+## Software Requirements
+
+1. **Verilog Simulator**: ModelSim, Vivado, or any preferred Verilog simulation tool.
+2. **FPGA Development Environment**: Xilinx Vivado, Intel Quartus, or equivalent tools for synthesis and programming.
+3. **Version Control**: Git (optional, for managing project files).
+
+---
+
+## How to Use
+
+### Simulation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-repo-name/pwm-generator.git
+
+2.Open the Verilog files in your preferred simulation tool.
+
+3.Provide a 50 MHz clock signal and simulate the behavior of ui_in[0] and ui_in[1] to observe the output PWM waveform.
+
+---
+
+## FPGA Implementation
+- Synthesize the design using your FPGA toolchain.
+- Assign the following ports to GPIO pins on your FPGA board:
+  - clk → Connect to a 50 MHz clock.
+  - ui_in[0] → Button for increasing duty cycle.
+  - ui_in[1] → Button for decreasing duty cycle.
+  - PWM_OUT → Connect to an output device or oscilloscope.
+
+- Program the FPGA and test the functionality.
+
+---
+
+## Testing and Verification
+
+#### Simulation
+- Use a testbench to simulate the Verilog module.
+- Check the PWM_OUT signal on waveform viewers to verify duty cycle changes in response to button inputs.
+#### Hardware Testing
+- Connect the FPGA outputs to an oscilloscope to observe the PWM waveform.
+= Press the buttons to verify duty cycle adjustments.
+
+---
+
+## Credits and References
+This project is developed as part of the CEG Fabless initiative by Team CF-2024-TT10-05. For a complete list of contributors, mentors, and research references, please see [CREDITS.md](./CREDITS.md).
+
