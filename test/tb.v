@@ -21,14 +21,16 @@ module tb ();
   wire [7:0] uo_out;
   wire [7:0] uio_out;
   wire [7:0] uio_oe;
+  wire VPWR_signal = 1'b1;  // Define a wire for VPWR and assign logic high
+  wire VGND_signal = 1'b0;  // Define a wire for VGND and assign logic low
 
   // Replace tt_um_example with your module name:
   tt_um_nithishreddykvs user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
-      .VPWR(1'b1),
-      .VGND(1'b0),
+      .VPWR(VPWR_signal),  // Connect the wire to VPWR
+      .VGND(VGND_signal),  // Connect the wire to VGND
 `endif
 
       .ui_in  (ui_in),    // Dedicated inputs
