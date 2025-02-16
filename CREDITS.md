@@ -1,6 +1,6 @@
 # CEG Fabless Initiative Credits
 
-## Project Team CF-2024-TT10-06
+## Project Team CF-2024-TT10-05
 *Project Title:* [Project Name]
 
 ### Team Members
