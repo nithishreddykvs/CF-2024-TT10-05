@@ -1,13 +1,13 @@
 # CEG Fabless Initiative Credits
 
 ## Project Team CF-2024-TT10-05
-*Project Title:* [Project Name]
+*Project Title:* Pulse Width Modulation
 
 ### Team Members
-- [Student Name 1]
-  - Class: [e.g., III Year B.E. ECE]
+- Nithish Reddy KVS
+  - Class: Class: III Year B.E. ECE
   - Department of ECE, CEG
-  - Email: [student1@email.com]
+  - Email: nithishreddy.k.v.s@gmail.com
 - [Student Name 2]
   - Class: [e.g., IV Year B.E. ECE]
   - Department of ECE, CEG
@@ -15,12 +15,12 @@
 [Add all student members]
 
 ### Alumni Mentors
-- [Mentor Name 1]
-  - Class of [Year], Department of ECE, CEG
-  - Email: [mentor1@email.com]
-- [Mentor Name 2]
-  - Class of [Year], Department of ECE, CEG
-  - Email: [mentor2@email.com]
+- Raghulkumaran Gunaseelan
+  - Class of 2017, Department of ECE, CEG
+  - Email: raghulvilangudi@gmail.com
+- Sivakumar Anandan
+  - Class of 2013, Department of ECE, CEG
+  - Email: sivakumaranandan@live.com
 [Add all alumni mentors]
 
 ### Faculty Advisors
@@ -32,18 +32,8 @@
 CEG Fabless is a Student-Faculty-Alumni Integrated Circuits design initiative at the Department of ECE, College of Engineering Guindy (CEG). Our mission is to enable students to explore, experiment and build ASICs to solve real world problems through collaborative mentorship from academia and industry experts.
 
 ### TinyTapeout Participation
-This project is part of the TinyTapeout 10 (TT10) shuttle program, with Team ID: CF-2024-TT10-06.
+This project is part of the TinyTapeout 10 (TT10) shuttle program, with Team ID: CF-2024-TT10-05.
 
-## Research References
-This project builds upon the following research works:
-
-1. [Author Last Name, First Initial]. ([Year]). [Title of the paper]. [Journal Name], [Volume](Issue), [Page range].
-   - DOI: [DOI number if available]
-   - Brief description of how this work influenced our project
-
-2. [Author Last Name, First Initial]. ([Year]). [Title of the paper]. [Journal Name], [Volume](Issue), [Page range].
-   - DOI: [DOI number if available]
-   - Brief description of how this work influenced our project
 
 # CEG Fabless Initiative Credits
 ## Platform Credits
@@ -64,7 +54,7 @@ We express our deepest gratitude to our DECE Alumni for:
 
 ### Department of ECE, CEG
 We sincerely thank:
-- Dr. [HOD Name] - Head of the Department
+- Dr. M.A.Bhagyaveni - Head of the Department
   - For the guidance and encouragement throughout the project
   - For providing the necessary infrastructure and resources
   - For supporting student initiatives in semiconductor design
