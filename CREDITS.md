@@ -5,14 +5,21 @@
 
 ### Team Members
 - Nithish Reddy KVS
-  - Class: Class: III Year B.E. ECE
+  - Class: III Year B.E. ECE
   - Department of ECE, CEG
   - Email: nithishreddy.k.v.s@gmail.com
-- [Student Name 2]
-  - Class: [e.g., IV Year B.E. ECE]
+- Praneet R
+  - Class: III Year B.E. ECE
   - Department of ECE, CEG
-  - Email: [student2@email.com]
-[Add all student members]
+  - Email: praneet1793@gmail.com
+- Vignesh M 
+  - Class: III Year B.E. ECE
+  - Department of ECE, CEG
+  - Email: vigneshmani2111@gmail.com
+- Karthik Tamil Selvann
+  - Class: III Year B.E. ECE
+  - Department of ECE, CEG
+  - Email: karthiktamilselvann@gmail.com  
 
 ### Alumni Mentors
 - Raghulkumaran Gunaseelan
@@ -21,12 +28,7 @@
 - Sivakumar Anandan
   - Class of 2013, Department of ECE, CEG
   - Email: sivakumaranandan@live.com
-[Add all alumni mentors]
 
-### Faculty Advisors
-- [Faculty Name 1] - [Designation], Department of ECE, CEG
-- [Faculty Name 2] - [Designation], Department of ECE, CEG
-[Add all faculty advisors]
 
 ## About CEG Fabless
 CEG Fabless is a Student-Faculty-Alumni Integrated Circuits design initiative at the Department of ECE, College of Engineering Guindy (CEG). Our mission is to enable students to explore, experiment and build ASICs to solve real world problems through collaborative mentorship from academia and industry experts.
